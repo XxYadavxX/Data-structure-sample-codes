@@ -12,26 +12,25 @@ OUTPUT:
 	a) Display out put whether the expression is well parenthesized or not
 	
 
-AUTHOR:  Sunil
-DATE: 27.09.2024
+
 */
 #include<iostream>
 #include<string.h>
 #define MAX 10
 using namespace std;
 
-//ADT Stack
+
 class Stack{
 	private:
 		
-		char S[MAX];//an array as a Stack
-		int top;//pointer to the top element of a stack
+		char S[MAX];
+		int top;
 	public:
 		Stack(){
-			top=-1;//Stack empty means top points to invalid location
+			top=-1;
 		}
 		
-		//check if stack is empty
+		
 		bool isStackEmpty(){
 			if (top == -1)
 				return true;
@@ -39,7 +38,7 @@ class Stack{
 				return false;
 		}
 		
-		//check if stack is full
+		
 		bool isStackFull(){
 			if (top == MAX-1)
 				return true;
@@ -47,7 +46,7 @@ class Stack{
 				return false;
 		}
 		
-		//Add element in stack 'Push Operation'
+		
 		void push(char token){
 				if(! isStackFull())
 					S[++top]=token;
@@ -55,7 +54,7 @@ class Stack{
 					cout<<"\nStack is full!!";
 		}
 		
-		//Remove element from stack 'Pop Operation'
+		
 		char pop(){
 				if(!isStackEmpty()){
 					cout<<"\n"<<S[top]<<"  is popped from Stack";
@@ -67,7 +66,7 @@ class Stack{
 				return '\0';
 		}
 		
-		//Display stack contents
+		
 		void displayStack(){
 			int i;
 			if(!isStackEmpty()){
@@ -79,10 +78,10 @@ class Stack{
 		}
 };
 
-//Implementation class 
+
 class BalancedExpression{
 	private:
-		char E[20];//an array to store an infix expression
+		char E[20];
 		Stack stk;
 	public:
 		BalancedExpression(){
@@ -124,8 +123,8 @@ class BalancedExpression{
 						break;
 					}
 				}
-				i++;//go to next array index of expression
-			}//end while
+				i++;
+			}
 			if (!bracketPresent)
 				cout<<"\nThe expression is without any parenthesis";
 			else
@@ -137,12 +136,12 @@ class BalancedExpression{
 				}
 				else
 					cout<<"\nThe expression is NOT well parenthesized!";
-		}//end function checkExpression
+		}
 		
-};//end class
+};
 
 
-//Driver Code
+
 int main(){
 	int choice=0;
 
@@ -170,7 +169,7 @@ int main(){
 				cout<<"\nGood By!!";
 				break;
 			
-		}//end switch
-	}//end while
+		}
+	}
 	return 0;
-}//end main
+}
