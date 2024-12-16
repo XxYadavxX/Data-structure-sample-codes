@@ -15,26 +15,24 @@ OUTPUT:
     2. Display sorted list of students using Bubble sort
     3. Display top five scores
 
-AUTHOR: Dr. Sunil D. Rathod
-DATE: 01.08.2024
 '''
 
-#Implementation class
+
 class FEStudent:
     def __init__(self):
-        self.N=0 # Number of students in FE
-        self.studentList=[] #List of students in FE
-        self.bSortList=[] # Sorted list for Bubble sort
-        self.sSortList=[] # Sorted list for Selection sort
+        self.N=0
+        self.studentList=[]
+        self.bSortList=[]
+        self.sSortList=[]
     
     
     def initialize(self):
-        self.N=0 # Number of students in FE
-        self.studentList=[] #List of students in FE
-        self.bSortList=[] # Sorted list for Bubble sort
-        self.sSortList=[] # Sorted list for Selection sort
+        self.N=0
+        self.studentList=[]
+        self.bSortList=[]
+        self.sSortList=[]
     
-    #1. Read Student percentage
+    
     def getStudentPercentage(self,nos):
         self.N=nos
         for i in range(self.N):
@@ -44,13 +42,13 @@ class FEStudent:
             self.bSortList.append(percent)
             self.sSortList.append(percent)
         
-    #2. Display Student percentage
+   
     def displayStudentList(self,List):
         print("\nThe percentage of FE students")
         for i in range(self.N):
             print(List[i],end=" ")
 
-    #3. Display List of students in acending order of percentage using Bubble Sort
+    
     def bubbleSort(self):
         for i in range(self.N-1):
             print("\nThe nos. after ",i+1," pass")
@@ -63,7 +61,7 @@ class FEStudent:
             for k in range(self.N):
                 print(self.bSortList[k],end=" ")
     
-    #4. Display List of students in acending order of percentage using Selection Sort
+    
     def selectionSort(self):
         for i in range(self.N-1):
             print("\nThe nos. after ",i+1," pass")
@@ -76,7 +74,7 @@ class FEStudent:
                 print(self.bSortList[k],end=" ") 
     
         
-#Driver Code
+
 std=FEStudent()
 choice=0
 
