@@ -18,8 +18,7 @@ OUTPUT:
 	3. Delete Member from SE-A and SE-B divisions
 	4. Concatenate two lists
 
-AUTHOR: Dr. Sunil Rathod
-DATE: 03.09.2024
+
 */
 #include<iostream>
 using namespace std;
