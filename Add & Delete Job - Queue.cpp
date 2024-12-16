@@ -18,22 +18,22 @@ OUTPUT:
 using namespace std;
 //ADT Job
 typedef struct Job{
-	int ID;//ID number of a job
-	string name;//Name of Job
+	int ID;
+	string name;
 	
 }JOB;
 
-//ADT Queue with all operations
+
 class Queue{
 	private:
-		JOB Q[MAX];//Queue using array of objects
-		int front,rear;//pointer to the first element and last element of a Queue
+		JOB Q[MAX];
+		int front,rear;
 	public:
 		Queue(){
-			front=rear=-1;//Queue empty means front and rear point to invalid location
+			front=rear=-1;
 		}
 		
-		//check if Queue is empty
+		
 		bool isQueueEmpty(){
 			if (front == -1)
 				return true;
@@ -41,7 +41,7 @@ class Queue{
 				return false;
 		}
 		
-		//check if Queue is full
+		
 		bool isQueueFull(){
 			if (rear == MAX-1)
 				return true;
@@ -49,14 +49,14 @@ class Queue{
 				return false;
 		}
 		
-		//Add element in Queue 'enQueue Operation'
+		
 		void enQueue(JOB j){
 				if(! isQueueFull()){
-					//check whether it is first job to be added in queue
+
 					if(front == -1){
 						front=rear=0;
 						Q[rear]=j;
-					}//More jobs in queue
+					}
 					else
 						Q[++rear]=j;
 				}
@@ -64,15 +64,15 @@ class Queue{
 					cout<<"\nQueue is full!!";
 		}
 		
-		//Remove element from Queue 'dQueue Operation'
+		
 		void dQueue(){
 				
 				if(!isQueueEmpty()){
-					//check whether it is a last job to be removed from queue
+					
 					if(front == rear){
 						cout<<"\n"<<Q[front].ID<<"  is deleted from Queue";
 						front=rear=-1;
-					}//more jobs in queue
+					}
 					else{
 						cout<<"\n"<<Q[front].ID<<"  is deleted from Queue";
 						front++;
@@ -82,7 +82,7 @@ class Queue{
 					cout<<"\nQueue is Empty!!";
 		}
 		
-		//Display Queue contents
+		
 		void displayQueue(){
 			int i;
 			if(!isQueueEmpty()){
@@ -95,10 +95,10 @@ class Queue{
 		}
 };
 
-//Driver Code
+
 int main(){
 	int choice=0;
-	JOB j;//object to get job information
+	JOB j;
 	Queue obj ;
 	while(choice != 4){
 		cout<<"\n***************JOB QUEUE*****************";
@@ -126,7 +126,7 @@ int main(){
 				cout<<"\nGood By!!";
 				break;
 			
-		}//end switch
-	}//end while
+		}
+	}
 	return 0;
-}//end main
+}
