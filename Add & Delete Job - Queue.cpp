@@ -11,8 +11,7 @@ OUTPUT:
 	b) Delete Job from Queue
 	c) Display Queue
 	
-AUTHOR:  Sunil
-DATE: 13.10.2024
+
 */
 #include<iostream>
 #define MAX 3
