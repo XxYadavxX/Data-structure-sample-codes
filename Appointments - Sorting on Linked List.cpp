@@ -27,25 +27,25 @@ OUTPUT:
 #include<iostream>
 using namespace std;
 
-//ADT of Appointment
+
 typedef struct Appointment{
-	struct Appointment *prev;//pointer to previous node
-	int tokenID;//Slot ID
-	string Name;//name of visitor
+	struct Appointment *prev;
+	int tokenID;
+	string Name;
 	int hourOfDay;
-	int startTime;//24 hours format
+	int startTime;
 	int endTime;
-	int minDuration;// in minutes
+	int minDuration;
 	int maxDuration;
-	bool booked;//appointment booking status, 'true' if booked otherwise 'false'
-	struct Appointment *next;//pointer to next node
+	bool booked;
+	struct Appointment *next;
 }APPT;
 
-//Implementation class
+
 class AppointmentSchedular{
 	private:
-		APPT *head,*tail;//pointers to first and last node respectively
-		int countID;	//Track number of slots	
+		APPT *head,*tail;
+		int countID;	
 	public:
 		AppointmentSchedular(){
 			head=NULL;
@@ -53,16 +53,16 @@ class AppointmentSchedular{
 			countID=0;
 		}
 		
-		//1. Function to Add free slots
+		
 		void addFreeSlot(int hod,int stime,int etime, int min, int max){
 			APPT *p;
 			p=new APPT;
 			p->prev=NULL;
 			p->tokenID=++countID;
 			p->Name="";
-			p->hourOfDay=hod;//hour of day
-			p->startTime=stime;//as minutes
-			p->endTime=etime;//as minutes
+			p->hourOfDay=hod;
+			p->startTime=stime;
+			p->endTime=etime;
 			p->minDuration=min;
 			p->maxDuration=max;
 			p->booked=false;
@@ -74,10 +74,10 @@ class AppointmentSchedular{
 				tail->next=p;
 				p->prev=tail;
 				tail=tail->next;
-			}//end else
+			}
 		}
 	
-		//2. Function to display student list
+		
 		void displayList(){
 			APPT *cur;
 			cur=head;
@@ -90,7 +90,7 @@ class AppointmentSchedular{
 			cout<<"\n->NULL";
 		}
 		
-		//3. Functio to Book the appointment
+		
 		void bookAppointment(int id,string name){
 			APPT *cur;
 			cur=head;
@@ -110,7 +110,7 @@ class AppointmentSchedular{
 				cout<<"\nNo slot "<<id<<" available";	
 		}
 		
-		//4. Sort list based on time
+		
 		void sortList(){
 			APPT *i,*j,*temp;
 			temp=new APPT;
@@ -122,43 +122,43 @@ class AppointmentSchedular{
 					if (i->hourOfDay > j->hourOfDay){
 						temp->tokenID=i->tokenID;
 						temp->Name=i->Name;
-						temp->hourOfDay=i->hourOfDay;//hour of day
-						temp->startTime=i->startTime;//as minutes
-						temp->endTime=i->endTime;//as minutes
+						temp->hourOfDay=i->hourOfDay;
+						temp->startTime=i->startTime;
+						temp->endTime=i->endTime;
 						temp->minDuration=i->minDuration;
 						temp->maxDuration=i->maxDuration;
 						temp->booked=i->booked;
 						
 						i->tokenID=j->tokenID;
 						i->Name=j->Name;
-						i->hourOfDay=j->hourOfDay;//hour of day
-						i->startTime=j->startTime;//as minutes
-						i->endTime=j->endTime;//as minutes
+						i->hourOfDay=j->hourOfDay;
+						i->startTime=j->startTime;
+						i->endTime=j->endTime;
 						i->minDuration=j->minDuration;
 						i->maxDuration=j->maxDuration;
 						i->booked=j->booked;
 						
 						j->tokenID=temp->tokenID;
 						j->Name=temp->Name;
-						j->hourOfDay=temp->hourOfDay;//hour of day
-						j->startTime=temp->startTime;//as minutes
-						j->endTime=temp->endTime;//as minutes
+						j->hourOfDay=temp->hourOfDay;
+						j->startTime=temp->startTime;
+						j->endTime=temp->endTime;
 						j->minDuration=temp->minDuration;
 						j->maxDuration=temp->maxDuration;
 						j->booked=temp->booked;
 						
 					}
-				}//end for loop j
-			}	//end for loop i		
-		}//end function
+				}
+			}			
+		}
 		
-		//5. Sort list based on time using pointer manipulation
+		
 		void sortListPhysical(){
 			
-		}//end function
+		}
 };
 
-//Driver Code
+
 int main(){
 	int choice=0;
 	string name;
@@ -214,122 +214,7 @@ int main(){
 				cout<<"\nGood By!!";
 				break;
 			
-		}//end switch
-	}//end while
+		}
+	}
 	return 0;
-}//end main
-
-
-/*
-D:\student_programs>g++ Exper8.cpp
-
-D:\student_programs>a
-
-***************APPOINTMENT SCHEDULER*****************
-1. Add free slots
-2. Display free slots
-3. Book appointment
-4. Sort list based on time
-5. Sort list based on time using pointer manipulation
-6. Exit Application
-What is your choice::1
-
-Enter hour of a day 24 hours format (0 to 23):8
-
-Enter start time of an hour:12
-
-Enter end time of an hour:45
-
-Enter minimum availability as minutes:12
-
-Enter minimum availability as minutes:22
-
-***************APPOINTMENT SCHEDULER*****************
-1. Add free slots
-2. Display free slots
-3. Book appointment
-4. Sort list based on time
-5. Sort list based on time using pointer manipulation
-6. Exit Application
-What is your choice::2
-[0x1027310]->
-
-ID      Name    Hoday   sTime   eTime   minD    maxD    Booked
-1               8       12      45      12      22      0
-->NULL
-***************APPOINTMENT SCHEDULER*****************
-1. Add free slots
-2. Display free slots
-3. Book appointment
-4. Sort list based on time
-5. Sort list based on time using pointer manipulation
-6. Exit Application
-What is your choice::1
-
-Enter hour of a day 24 hours format (0 to 23):13
-
-Enter start time of an hour:5
-
-Enter end time of an hour:35
-
-Enter minimum availability as minutes:10
-
-Enter minimum availability as minutes:20
-
-***************APPOINTMENT SCHEDULER*****************
-1. Add free slots
-2. Display free slots
-3. Book appointment
-4. Sort list based on time
-5. Sort list based on time using pointer manipulation
-6. Exit Application
-What is your choice::2
-[0x1027310]->
-
-ID      Name    Hoday   sTime   eTime   minD    maxD    Booked
-1               8       12      45      12      22      0
-2               13      5       35      10      20      0
-->NULL
-***************APPOINTMENT SCHEDULER*****************
-1. Add free slots
-2. Display free slots
-3. Book appointment
-4. Sort list based on time
-5. Sort list based on time using pointer manipulation
-6. Exit Application
-What is your choice::1
-
-Enter hour of a day 24 hours format (0 to 23):10
-
-Enter start time of an hour:15
-
-Enter end time of an hour:55
-
-Enter minimum availability as minutes:15
-
-Enter minimum availability as minutes:35
-
-***************APPOINTMENT SCHEDULER*****************
-1. Add free slots
-2. Display free slots
-3. Book appointment
-4. Sort list based on time
-5. Sort list based on time using pointer manipulation
-6. Exit Application
-What is your choice::2
-[0x1027310]->
-
-ID      Name    Hoday   sTime   eTime   minD    maxD    Booked
-1               8       12      45      12      22      0
-2               13      5       35      10      20      0
-3               10      15      55      15      35      0
-->NULL
-***************APPOINTMENT SCHEDULER*****************
-1. Add free slots
-2. Display free slots
-3. Book appointment
-4. Sort list based on time
-5. Sort list based on time using pointer manipulation
-6. Exit Application
-What is your choice::
-*/
+}
