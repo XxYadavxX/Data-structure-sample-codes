@@ -18,7 +18,7 @@ OUTPUT:
 '''
 import datetime
 
-#ADT of Student
+
 class Student:
     def __init__(self):
         self.PRN=None
@@ -27,14 +27,14 @@ class Student:
 #Implementation Class
 class SEComputer:
     def __init__(self):
-        self.n1=0 #No. of students in SE-A
-        self.n2=0 #No. of students in SE-B
-        self.n3=0 #No. of students in SE Computer
-        self.SEAList=[] #SE-A division list
-        self.SEBList=[] #SE-B division list
-        self.SECOMPList=[] #SE-A& SE-B division list, SE Computer
+        self.n1=0
+        self.n2=0
+        self.n3=0
+        self.SEAList=[]
+        self.SEBList=[]
+        self.SECOMPList=[]
         
-    #Function/Method for reading Student information SE-A
+    
     def readStudentdataSEA(self):
         self.n1=int(input("Enter the no. of students for SE-A:"))
         for i in range(self.n1):
@@ -47,7 +47,7 @@ class SEComputer:
             s.dob=datetime.date(year,month,day)
             self.SEAList.append(s)
             
-    #Function/Method for reading Student information SE-B
+    
     def readStudentdataSEB(self):
         self.n2=int(input("Enter the no. of students for SE-B:"))
         for i in range(self.n2):
@@ -60,22 +60,22 @@ class SEComputer:
             s.dob=datetime.date(year,month,day)
             self.SEBList.append(s)
             
-    #Function/Method for displaying book information SE-A
+    
     def displayStudentListSEA(self):
         for i in range(self.n1):
             print("\n\t",self.SEAList[i].PRN,"  ",str(self.SEAList[i].dob))
     
-    #Function/Method for displaying book information SE-B
+ 
     def displayStudentListSEB(self):
         for i in range(self.n2):
             print("\n\t",self.SEBList[i].PRN,"  ",str(self.SEBList[i].dob))
     
-    #Function/Method for displaying book information SE Computer
+  
     def displayStudentListSECOMP(self):
         for i in range(self.n3):
             print("\n\t",self.SEBList[i].PRN,"  ",str(self.SEBList[i].dob))
         
-    def sortStudentList(self,nos,List):#Actual parameters
+    def sortStudentList(self,nos,List):
         for i in range(nos-1):
             for j in range(0,nos-i-1):
                 if List[j].dob > List[j+1].dob:
@@ -85,25 +85,25 @@ class SEComputer:
     
     def mergeList(self):
         self.SECOMPList=[]
-        #list SE-A & SE-B are empty
+        
         if (self.n1==0 and self.n2==0):
             print("No students found in SE-A & SE-B")
-        elif(self.n1==0): #list SE-A is empty then copy list SE-B 
+        elif(self.n1==0):
             for i in range(self.n2):
                 SECOMPList.append(self.SEBList[i])
-        elif(self.n2==0): #list SE-B is empty then copy list SE-A 
+        elif(self.n2==0): 
             for i in range(self.n1):
                 SECOMPList.append(self.SEBList[i])
-        elif(self.n1 >0 and self.n2 >0):#list SE-A & SE-B have students
-            #copy SE-A students
+        elif(self.n1 >0 and self.n2 >0):
+
             for i in range(self.n2):
                 SECOMPList.append(self.SEBList[i])
-            #copy SE-A students
+            
             for i in range(self.n1):
                 SECOMPList.append(self.SEBList[i])
 
 
-#Driver Code
+
 obj=SEComputer()
 choice=0
 while(choice != 5):
@@ -136,9 +136,9 @@ while(choice != 5):
         choice1=int(input("Enter your choice:"))
         
         if(choice1==1):
-            obj.sortStudentList(obj.n1,obj.SEAList)#SE-A formal parameters
+            obj.sortStudentList(obj.n1,obj.SEAList)
         elif(choice1==2):
-            obj.sortStudentList(obj.n2,obj.SEBList)#SE-B  
+            obj.sortStudentList(obj.n2,obj.SEBList) 
         
     elif(choice == 4):
         obj.mergeList()
