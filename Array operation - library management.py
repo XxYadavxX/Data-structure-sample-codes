@@ -19,27 +19,26 @@ OUTPUT:
     4. Number of books having cost more than 500
     5. Copy books in a new list which has cost less than 500
 
-AUTHOR: Dr. Sunil D. Rathod
-DATE: 11.07.2024
+
 '''
-#ADT of Book
+
 class Book:
     def __init__(self):
         self.name=None
         self.cost=0
 
-#Implementation class
+
 class DepartmentLibrary:
     def __init__(self):
         self.N=0
         self.bookList=[]
-        self.newBookList=[]#Books cost less than 500
+        self.newBookList=[]
     
     def initialization(self):
         self.N=0
         self.bookList=[]
     
-    #1. Read Book Details
+    
     def getBookDetail(self,nob):
         for i in range(nob):
             book=Book()
@@ -52,13 +51,13 @@ class DepartmentLibrary:
         
         self.N=self.N+nob
         
-    #2. Display List Book
+    
     def displayBookList(self):
         print("\n\tName    Cost")
         for i in range(self.N):
             print("\n\t",self.bookList[i].name,"  ",self.bookList[i].cost)
 
-    #3. Display List of Books in acesding order of cost
+    
     def sortBookList(self):
         for i in range(self.N-1):
             for j in range(0,self.N-i-1):
@@ -67,14 +66,14 @@ class DepartmentLibrary:
                     self.bookList[j] = self.bookList[j+1] 
                     self.bookList[j+1]=temp
 
-    # abcdaebf
     
-    #4. Delete the duplicate entries
+    
+    
     def deleteDuplicates(self):
         
         dupList=[]
         i=0
-        #Find duplicates
+        
         flag=True
         i=0
         while(flag):
@@ -92,10 +91,10 @@ class DepartmentLibrary:
             i+=1
             if(i>=len(self.bookList)):
                 flag=False
-        #bookList has got its size changed now after deleting Duplicates
+        
         self.N=len(self.bookList)
         
-    #5. Number of books having cost more than 500
+    
     def moreCost(self):
         nob=0
         for i in range(len(self.bookList)):
@@ -104,7 +103,7 @@ class DepartmentLibrary:
         
         print("Number of books having cost greater than 500::",nob)
      
-     #6. Copy books in a new list which has cost less than 500
+     
     def underCostList(self):
         
         for i in range(len(self.bookList)):
@@ -115,7 +114,7 @@ class DepartmentLibrary:
             print("\n\t",self.newBookList[i].name,"  ",self.newBookList[i].cost)
         
         
-#Driver Code
+
 lib=DepartmentLibrary()
 choice=0
 
