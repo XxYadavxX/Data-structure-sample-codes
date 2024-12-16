@@ -15,26 +15,25 @@ OUTPUT:
     2. Display sorted list of students using Shell sort
     3. Display top five scores
 
-AUTHOR: Dipali Junankar
-DATE: 01.08.2024
+
 '''
 
-#Implementation class
+
 class FEStudent:
     def __init__(self):
-        self.N=0 # Number of students in FE
-        self.studentList=[] #List of students in FE
-        self.iSortList=[] # Sorted list for Insertion sort
-        self.sSortList=[] # Sorted list for Shell sort
+        self.N=0
+        self.studentList=[]
+        self.iSortList=[]
+        self.sSortList=[]
     
     
     def initialize(self):
-        self.N=0 # Number of students in FE
-        self.studentList=[] #List of students in FE
-        self.iSortList=[] # Sorted list for Insertion sort
-        self.sSortList=[] # Sorted list for Shell sort
+        self.N=0
+        self.studentList=[]
+        self.iSortList=[]
+        self.sSortList=[]
     
-    #1. Read Student percentage
+    
     def getStudentPercentage(self,nos):
         self.N=nos
         for i in range(self.N):
@@ -44,22 +43,21 @@ class FEStudent:
             self.iSortList.append(percent)
             self.sSortList.append(percent)
         
-    #2. Display Student percentage
+    
     def displayStudentList(self,List):
         print("\nThe percentage of FE students")
         for i in range(self.N):
             print(List[i],end=" ")
 
-    #3. Display List of students in acending order of percentage using Insertion Sort
-    # Traverse through 1 to len(self.iSortList)
+
     def insertionSort(self):
         for i in range(1, len(self.iSortList)):
             print("\nThe nos. after ",i," pass")
             key = self.iSortList[i]
             j = i - 1
             
-            # Move elements of self.iSortList[0..i-1], that are greater than key,
-            # to one position ahead of their current position
+           
+            
             while j >= 0 and key < self.iSortList[j]:
                 self.iSortList[j + 1] = self.iSortList[j]
                 j -= 1
@@ -69,11 +67,11 @@ class FEStudent:
             for k in range(self.N):
                 print(self.iSortList[k],end=" ")
 
-    #4. Display List of students in acending order of percentage using shell Sort
+   
     
     def shellSort(self):
         d = self.N // 2
-        p=1 #number of passes
+        p=1
         while d > 0:
             print("\nThe nos. after ",p," pass")
             for i in range(d, self.N):
@@ -84,12 +82,12 @@ class FEStudent:
                     j -= d
                 self.sSortList[j] = temp
             d = d // 2
-            p+=1 #increase the number of passes value
+            p+=1
             for k in range(self.N):
                 print(self.iSortList[k],end=" ")
 
 
-    #5. Top 5 score
+    
     def topFiveScores(self):
         if(len(self.iSortList)==0):
             print("Student List Empty!!")
@@ -100,7 +98,7 @@ class FEStudent:
             
         
         
-#Driver Code
+
 std=FEStudent()
 choice=0
 
