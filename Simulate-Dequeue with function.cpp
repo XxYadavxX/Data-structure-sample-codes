@@ -13,31 +13,30 @@ OUTPUT:
 	b) Delete End
 	c) Display DQueue
 	
-AUTHOR:  Sunil
-DATE: 14.10.2024
+
 */
 #include<iostream>
 #define MAX 3
 using namespace std;
-//ADT Dobule Ended Queue
+
 class DQueue{
 	private:
-		int Q[MAX];//DQueue using array of objects
-		int front,rear;//pointer to the first element and last element of a DQueue
+		int Q[MAX];
+		int front,rear;
 	public:
 		DQueue(){
-			front=rear=-1;//DQueue empty means front and rear point to invalid location
+			front=rear=-1;
 		}
 		
 			
-		//Add element in DQueue at begin
+		
 		void addBeginDQueue(int val){
 				if(front!=0){
-					//check whether it is first job to be added in DQueue
+					
 					if(front == -1){
 						front=rear=0;
 						Q[front]=val;
-					}//More jobs in DQueue
+					}
 					else
 						Q[--front]=val;
 				}
@@ -45,15 +44,15 @@ class DQueue{
 					cout<<"\nDQueue is full at front!!";
 		}
 		
-		//Remove element at the front DQueue
+		
 		void delBeginDQueue(){
 				
 				if(front != -1){
-					//check whether it is a last job to be removed from DQueue
+					
 					if(front == rear){
 						cout<<Q[front]<<"  is deleted from DQueue";
 						front=rear=-1;
-					}//more jobs in DQueue
+					}
 					else{
 						cout<<Q[front]<<"  is deleted from DQueue";
 						front++;
@@ -63,14 +62,14 @@ class DQueue{
 					cout<<"\nDQueue is Empty!!";
 		}
 		
-		//Add element in DQueue at rear
+		
 		void addEndDQueue(int val){
 				if(rear!=MAX-1){
-					//check whether it is first job to be added in DQueue
+					
 					if(front == -1){
 						front=rear=0;
 						Q[rear]=val;
-					}//More jobs in DQueue
+					}
 					else
 						Q[++rear]=val;
 				}
@@ -78,15 +77,15 @@ class DQueue{
 					cout<<"\nDQueue is full at the rear!!";
 		}
 		
-		//Remove element at the end DQueue
+		
 		void delEndDQueue(){
 				
 				if(rear !=-1){
-					//check whether it is a last job to be removed from DQueue
+					
 					if(front == rear){
 						cout<<"\n"<<Q[rear]<<"  is deleted from DQueue";
 						front=rear=-1;
-					}//more jobs in DQueue
+					}
 					else{
 						cout<<Q[rear]<<"  is deleted from DQueue";
 						rear--;
@@ -95,7 +94,7 @@ class DQueue{
 				else
 					cout<<"\nDQueue is Empty!!";
 		}
-		//Display DQueue contents
+		
 		void displayDQueue(){
 			int i;
 			if(front != -1){
@@ -108,7 +107,7 @@ class DQueue{
 		}
 };
 
-//Driver Code
+
 int main(){
 	int choice=0,val;
 	DQueue obj ;
@@ -146,7 +145,7 @@ int main(){
 				cout<<"\nGood By!!";
 				break;
 			
-		}//end switch
-	}//end while
+		}
+	}
 	return 0;
-}//end main
+}
