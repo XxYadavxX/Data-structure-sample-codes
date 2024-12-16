@@ -22,8 +22,7 @@ OUTPUT:
 	d) Sort list based on time
 	e) Sort list based on time using pointer manipulation
 
-AUTHOR: Dr. Sunil Rathod
-DATE: 19.09.2024
+
 */
 #include<iostream>
 using namespace std;
