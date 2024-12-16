@@ -13,8 +13,8 @@ INPUT:
 OUTPUT:
    2. Sorted List of SE_Comp
 
-AUTHOR: Dr. Sunil D. Rathod
-DATE: 23.07.2024
+
+
 '''
 import datetime
 
