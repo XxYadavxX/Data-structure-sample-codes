@@ -12,13 +12,12 @@ OUTPUT:
     2. Print the Magic Square Matrix
     
 
-AUTHOR: Dr. Sunil D. Rathod
-DATE: 17.07.2024
+
 '''
 
-#Implementation Class
+
 class magicsquare:
-    #Function to get an integer value only as odd number
+    
     def num(self):
         n = int(input("Enter any odd number: "))
         if n % 2 == 0:
@@ -30,7 +29,7 @@ class magicsquare:
         else:
             return int(n)
     
-    #Function to generate Magic Square Matrix
+    
     def generateSquare(self,n):
         magicSquare = [[0 for x in range(n)]
                        for y in range(n)]
@@ -74,7 +73,7 @@ class magicsquare:
 
     
 
-#Driver Code
+
 
 if __name__ == "__main__":
     
