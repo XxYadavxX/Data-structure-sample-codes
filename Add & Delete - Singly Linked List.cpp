@@ -22,27 +22,27 @@ OUTPUT:
 */
 #include<iostream>
 using namespace std;
-//ADT of Student Club Member
+
 typedef struct Member{
 	
-	string PRN;// Student PRN
-	string Name;// Student name
-	string memberType;// Member type, regular or president or secretary
+	string PRN;
+	string Name;
+	string memberType;
 	struct Member *next;
 }STUD;
 
-//Implementation class of Club Members
+
 class ClubMember{
 	
 	public:
-		STUD *head1,*head2;//Two header pointers for SE-A & SE-B
+		STUD *head1,*head2;
 
 		ClubMember(){
 			head1=NULL;
 			head2=NULL;
 		}
 		
-		//1. Function to add student in the list
+		
 		STUD * addMember(STUD *head,string prn,string name, string mtype){
 			STUD *p;
 			p=new STUD;
@@ -63,12 +63,12 @@ class ClubMember{
 				
 				cur->next=p;
 				cout<<"\n"<<cur->PRN<<"  "<<cur->Name<<"  "<<cur->memberType;
-			}//end else
+			}
 			
 			return head;
 		}
 		
-		//2. Function to display student list
+		
 		void displayList(STUD *head){
 			STUD *cur;
 			cur=head;
@@ -80,7 +80,7 @@ class ClubMember{
 			cout<<"NULL";
 		}
 		
-		//3. Function to delete student from the list
+		
 		STUD* deleteStudent(STUD* head,string key){
 			
 			STUD *cur,*f;
@@ -109,7 +109,7 @@ class ClubMember{
 		 return head;
 		}
 		
-		//4. Function to Concatenate two lists
+		
 		void concatenate(){
 			STUD *cur;
 			cur=head1;
@@ -122,7 +122,7 @@ class ClubMember{
 		
 };
 
-//Driver Code
+
 int main(){
 	int choice=0,memberShip, cho;
 	string PRN,name,mtype;
@@ -193,8 +193,8 @@ int main(){
 				cout<<"\nGood Buy!!";
 				break;
 			
-		}//end switch
+		}
 		
-	}//end while
+	}
 	
-}//end main
+}
