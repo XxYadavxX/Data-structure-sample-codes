@@ -23,21 +23,20 @@ OUTPUT:
     2. Search friend using Binary Search
     3. Search friend using Fibonacci Search
 
-AUTHOR: Dr. Sunil Rathod
-DATE: 16.08.2024
+
 '''
 class Friend:
     def __init__(self):
         name=None
         mobile=0
 
-#Implementation class
+
 class PhoneBook:
     def __init__(self):
-        self.N=0 # Number of friends in phonebook
-        self.friendList=[] #friends in phonebook
+        self.N=0
+        self.friendList=[]
        
-    #1. Read friends name and mobile
+   
     def getFriendDetails(self,nof):
         self.N=nof
         for i in range(self.N):
@@ -49,14 +48,14 @@ class PhoneBook:
             friend.mobile=mobile
             self.friendList.append(friend)
         
-    #2. Display Friend Details
+    
     def displayFriendList(self):
         print("\nThe Friend PhoneBook is")
         for i in range(self.N):
             print(self.friendList[i].name,"  ",self.friendList[i].mobile )
 
 
-#Driver Code
+
 frn=PhoneBook()
 choice=0
 
@@ -86,7 +85,7 @@ while(choice != 6):
         elif(choice1==2):
             name=input("Enter the name to be searched:")
             frn.bubbleSort()
-        #frn.binarySearchrecursive(name)
+        
         else:
             print("Wrong Choice")
     elif (choice ==4):
