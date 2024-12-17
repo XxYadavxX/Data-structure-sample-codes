@@ -16,7 +16,7 @@ OUTPUT:
 #include<iostream>
 #define MAX 3
 using namespace std;
-//ADT Job
+
 typedef struct Job{
 	int ID;
 	string name;
