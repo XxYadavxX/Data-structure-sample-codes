@@ -1,4 +1,4 @@
-'''
+vr'''
 AIM:
 Write a Python program to store first year percentage of students in array.
 Write function for sorting array of floating point numbers in ascending order using
@@ -72,6 +72,14 @@ class FEStudent:
                     self.sSortList[j]=temp
            for k in range(self.N):
                 print(self.bSortList[k],end=" ") 
+   def topFiveScores(self):
+        if(len(self.bSortList)==0):
+            print("Student List Empty!!")
+        elif(len(self.bSortList) < 5):
+            print("Top Scores::",self.bSortList[-1:-(len(self.bSortList)+1):-1])
+        elif(len(self.bSortList) >= 5):
+            print("Top Scores::",self.bSortList[-1:-6:-1])
+
     
         
 
